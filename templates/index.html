@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<!-- saved from url=(0024)https://cw755283.tw1.ru/ -->
+<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Выбор блюд — свадебный банкет</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+
+  
+
+  <style>
+    :root {
+      --paper: #f7f3e9;
+      --paper-dark: #eee7d8;
+      --ink: #30302c;
+      --muted: #77746a;
+      --line: #aaa493;
+      --green: #69745b;
+      --green-dark: #48523f;
+      --accent: #9a8062;
+      --white: #fffdf7;
+      --error: #a84b43;
+      --shadow: 0 18px 55px rgba(54, 48, 35, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 10%, rgba(150, 137, 103, 0.13), transparent 27rem),
+        radial-gradient(circle at 90% 90%, rgba(116, 132, 95, 0.12), transparent 32rem),
+        #ddd8ca;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    .page {
+      position: relative;
+      width: min(100% - 32px, 940px);
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 72px 72px 82px;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.24)),
+        var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .page::before {
+      content: "";
+      position: absolute;
+      inset: 22px;
+      z-index: 0;
+      border: 1px solid var(--line);
+      pointer-events: none;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .botanical {
+      position: absolute;
+      z-index: 1;
+      width: 270px;
+      height: 230px;
+      pointer-events: none;
+      opacity: 0.88;
+    }
+
+    .botanical::before,
+    .botanical::after {
+      content: "";
+      position: absolute;
+      display: block;
+      background: var(--green);
+      border-radius: 100% 0 100% 0;
+      transform: rotate(35deg);
+      opacity: 0.78;
+    }
+
+    .botanical::before {
+      width: 22px;
+      height: 58px;
+      left: 80px;
+      top: 55px;
+      box-shadow:
+        50px 22px 0 -2px #7b8567,
+        85px 58px 0 -3px #9aa17e,
+        126px 19px 0 -4px #737e61,
+        163px 76px 0 -1px #8a9470,
+        201px 39px 0 -4px #a2a785;
+    }
+
+    .botanical::after {
+      width: 24px;
+      height: 66px;
+      left: 28px;
+      top: 100px;
+      transform: rotate(-30deg);
+      box-shadow:
+        52px 4px 0 -2px #7b8567,
+        93px -20px 0 -4px #a0a681,
+        142px -26px 0 -3px #67755b,
+        185px 4px 0 -5px #929979;
+    }
+
+    .botanical-top {
+      top: -16px;
+      left: -48px;
+      transform: rotate(-18deg);
+    }
+
+    .botanical-bottom {
+      right: -56px;
+      bottom: -25px;
+      transform: rotate(155deg);
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--green-dark);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.23em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 650px;
+      margin: 0 auto 13px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(35px, 6vw, 64px);
+      font-weight: 500;
+      line-height: 1.05;
+      text-align: center;
+    }
+
+    .subtitle {
+      max-width: 600px;
+      margin: 0 auto 42px;
+      color: var(--muted);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(17px, 2.5vw, 22px);
+      line-height: 1.55;
+      text-align: center;
+    }
+
+    .ornament {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: min(100%, 540px);
+      margin: 0 auto 40px;
+      color: var(--green);
+    }
+
+    .ornament::before,
+    .ornament::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .ornament-symbol {
+      font-size: 22px;
+      line-height: 1;
+      transform: rotate(-25deg);
+    }
+
+    form {
+      display: grid;
+      gap: 27px;
+    }
+
+    .form-section {
+      padding: 23px 26px 25px;
+      border: 1px solid rgba(170, 164, 147, 0.75);
+      background: rgba(255, 253, 247, 0.48);
+    }
+
+    .section-title {
+      margin: 0 0 18px;
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+      font-weight: 500;
+    }
+
+    .section-hint {
+      margin: -9px 0 19px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .fields {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 17px;
+    }
+
+    label {
+      display: block;
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    input[type="text"],
+    textarea {
+      width: 100%;
+      margin-top: 8px;
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      outline: none;
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.5);
+      font: inherit;
+      font-size: 14px;
+      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    }
+
+    textarea {
+      min-height: 88px;
+      resize: vertical;
+    }
+
+    input[type="text"]:focus,
+    textarea:focus {
+      border-color: var(--green);
+      background: var(--white);
+      box-shadow: 0 0 0 3px rgba(105, 116, 91, 0.13);
+    }
+
+    .choices {
+      display: grid;
+      gap: 12px;
+    }
+
+    .choice {
+      position: relative;
+    }
+
+    .choice input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+    }
+
+    .choice label {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 17px;
+      border: 1px solid var(--line);
+      cursor: pointer;
+      font-weight: 400;
+      line-height: 1.45;
+      transition: border-color 0.2s, background 0.2s, transform 0.2s;
+    }
+
+    .choice label:hover {
+      background: rgba(255, 255, 255, 0.58);
+      transform: translateY(-1px);
+    }
+
+    .choice input:checked + label {
+      border-color: var(--green-dark);
+      background: rgba(105, 116, 91, 0.13);
+      box-shadow: inset 4px 0 0 var(--green-dark);
+    }
+
+    .choice input:focus-visible + label {
+      outline: 3px solid rgba(105, 116, 91, 0.24);
+      outline-offset: 2px;
+    }
+
+    .radio-mark,
+    .check-mark {
+      display: grid;
+      flex: 0 0 20px;
+      place-items: center;
+      width: 20px;
+      height: 20px;
+      margin-top: 1px;
+      border: 1px solid var(--green-dark);
+      background: var(--paper);
+    }
+
+    .radio-mark {
+      border-radius: 50%;
+    }
+
+    .check-mark {
+      border-radius: 2px;
+    }
+
+    .choice input:checked + label .radio-mark::after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--green-dark);
+    }
+
+    .choice input:checked + label .check-mark::after {
+      content: "✓";
+      color: var(--green-dark);
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .choice-content {
+      display: grid;
+      gap: 4px;
+    }
+
+    .choice-title {
+      font-family: "Playfair Display", serif;
+      font-size: 18px;
+    }
+
+    .choice-description {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .alcohol-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .alcohol-grid .choice label {
+      min-height: 65px;
+      align-items: center;
+    }
+
+    .required {
+      color: var(--error);
+    }
+
+    .error-message {
+      display: none;
+      margin-top: 9px;
+      color: var(--error);
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .has-error .error-message {
+      display: block;
+    }
+
+    .has-error input[type="text"],
+    .has-error .choice label {
+      border-color: var(--error);
+    }
+
+    .submit-wrap {
+      display: grid;
+      justify-items: center;
+      gap: 15px;
+      padding-top: 2px;
+    }
+
+    button {
+      min-width: 250px;
+      padding: 16px 26px;
+      border: 1px solid var(--green-dark);
+      color: #fffdf7;
+      background: var(--green-dark);
+      cursor: pointer;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+
+    button:hover {
+      background: #394334;
+      box-shadow: 0 8px 18px rgba(72, 82, 63, 0.2);
+      transform: translateY(-1px);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    .privacy-note {
+      max-width: 520px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .success {
+      display: none;
+      padding: 30px 24px;
+      border: 1px solid var(--green);
+      background: rgba(105, 116, 91, 0.12);
+      text-align: center;
+    }
+
+    .success.is-visible {
+      display: block;
+    }
+
+    .success-title {
+      margin: 0 0 9px;
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+    }
+
+    .success p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .footer-note {
+      margin: 38px 0 0;
+      color: var(--muted);
+      font-family: "Marck Script", cursive;
+      font-size: 26px;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .page {
+        width: calc(100% - 18px);
+        padding: 58px 28px 62px;
+      }
+
+      .page::before {
+        inset: 12px;
+      }
+
+      .botanical {
+        transform: scale(0.72);
+      }
+
+      .botanical-top {
+        top: -36px;
+        left: -90px;
+      }
+
+      .botanical-bottom {
+        right: -102px;
+        bottom: -65px;
+      }
+
+      .fields,
+      .alcohol-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-section {
+        padding: 20px 17px 21px;
+      }
+
+      .section-title {
+        font-size: 23px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      body {
+        background: var(--paper);
+      }
+
+      .page {
+        width: 100%;
+        min-height: 100vh;
+        padding-right: 21px;
+        padding-left: 21px;
+        box-shadow: none;
+      }
+
+      .page::before {
+        inset: 9px;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      .subtitle {
+        margin-bottom: 32px;
+        font-size: 17px;
+      }
+
+      .ornament {
+        margin-bottom: 28px;
+      }
+
+      button {
+        width: 100%;
+        min-width: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <div class="botanical botanical-top" aria-hidden="true"></div>
+    <div class="botanical botanical-bottom" aria-hidden="true"></div>
+
+    <div class="content">
+      <p class="eyebrow">Свадебный банкет · 10 октября 2026</p>
+
+      <h1>Выбор блюд</h1>
+
+      <p class="subtitle">
+        Помогите нам подготовить праздничный стол,
+        который понравится каждому гостю
+      </p>
+
+      <div class="ornament" aria-hidden="true">
+        <span class="ornament-symbol">❧</span>
+      </div>
+
+      <form id="banquetForm" method="post" action="/submit" novalidate="">
+        <section class="form-section" id="guestSection">
+          <h2 class="section-title">Ваши данные</h2>
+          <p class="section-hint">
+            Пожалуйста, укажите имя и фамилию гостя.
+          </p>
+
+          <div class="fields">
+            <label>
+              Имя <span class="required">*</span>
+              <input type="text" id="firstName" name="firstName" autocomplete="given-name" placeholder="Например, Анна" required="">
+            </label>
+
+            <label>
+              Фамилия <span class="required">*</span>
+              <input type="text" id="lastName" name="lastName" autocomplete="family-name" placeholder="Например, Иванова" required="">
+            </label>
+          </div>
+
+          <p class="error-message" id="guestError">
+            Укажите имя и фамилию.
+          </p>
+        </section>
+
+        <section class="form-section" id="mainDishSection">
+          <h2 class="section-title">Основное блюдо</h2>
+          <p class="section-hint">
+            Выберите один вариант основного блюда.
+          </p>
+
+          <div class="choices">
+            <div class="choice">
+              <input type="radio" id="dish1" name="mainDish" value="Медальоны из говядины" required="">
+              <label for="dish1">
+                <span class="radio-mark" aria-hidden="true"></span>
+                <span class="choice-content">
+                  <span class="choice-title">Медальоны из говядины</span>
+                  <span class="choice-description">
+                    С овощами гриль и соусом демиглас
+                  </span>
+                </span>
+              </label>
+            </div>
+
+            <div class="choice">
+              <input type="radio" id="dish2" name="mainDish" value="Филе лосося">
+              <label for="dish2">
+                <span class="radio-mark" aria-hidden="true"></span>
+                <span class="choice-content">
+                  <span class="choice-title">Филе лосося</span>
+                  <span class="choice-description">
+                    С картофелем, зеленью и сливочным соусом
+                  </span>
+                </span>
+              </label>
+            </div>
+
+            <div class="choice">
+              <input type="radio" id="dish3" name="mainDish" value="Равиоли с белыми грибами">
+              <label for="dish3">
+                <span class="radio-mark" aria-hidden="true"></span>
+                <span class="choice-content">
+                  <span class="choice-title">Равиоли с белыми грибами</span>
+                  <span class="choice-description">
+                    С пармезаном и соусом из трав
+                  </span>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <p class="error-message" id="dishError">
+            Выберите основное блюдо.
+          </p>
+        </section>
+
+        <section class="form-section">
+          <h2 class="section-title">Предпочтения по алкоголю</h2>
+          <p class="section-hint">
+            Можно выбрать несколько вариантов.
+          </p>
+
+          <div class="alcohol-grid">
+            <div class="choice">
+              <input type="checkbox" id="alcoholWine" name="alcohol" value="Вино">
+              <label for="alcoholWine">
+                <span class="check-mark" aria-hidden="true"></span>
+                <span class="choice-content">
+                  <span class="choice-title">Вино</span>
+                  <span class="choice-description">Красное или белое</span>
+                </span>
+              </label>
+            </div>
+
+            <div class="choice">
+              <input type="checkbox" id="alcoholChampagne" name="alcohol" value="Игристое вино">
+              <label for="alcoholChampagne">
+                <span class="check-mark" aria-hidden="true"></span>
+                <span class="choice-content">
+                  <span class="choice-title">Игристое</span>
+                  <span class="choice-description">Брют или полусухое</span>
+                </span>
+              </label>
+            </div>
+
+            <div class="choice">
+              <input type="checkbox" id="alcoholStrong" name="alcohol" value="Крепкие напитки">
+              <label for="alcoholStrong">
+                <span class="check-mark" aria-hidden="true"></span>
+                <span class="choice-content">
+                  <span class="choice-title">Крепкие напитки</span>
+                  <span class="choice-description">Водка, виски, коньяк</span>
+                </span>
+              </label>
+            </div>
+
+            <div class="choice">
+              <input type="checkbox" id="alcoholNone" name="alcohol" value="Без алкоголя">
+              <label for="alcoholNone">
+                <span class="check-mark" aria-hidden="true"></span>
+                <span class="choice-content">
+                  <span class="choice-title">Без алкоголя</span>
+                  <span class="choice-description">Предпочитаю безалкогольные напитки</span>
+                </span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section class="form-section">
+          <h2 class="section-title">Дополнительные пожелания</h2>
+          <p class="section-hint">
+            Если есть аллергии, ограничения или особые пожелания, напишите их здесь.
+          </p>
+
+          <label for="comment">
+            Комментарий
+            <textarea id="comment" name="comment" placeholder="Например: аллергия на орехи, вегетарианское меню..."></textarea>
+          </label>
+        </section>
+
+        <div class="submit-wrap">
+          <button type="submit">Сохранить выбор</button>
+
+          <p class="privacy-note">
+            Нажимая кнопку, вы отправляете свой выбор организаторам свадебного банкета.
+          </p>
+        </div>
+      </form>
+
+      <div class="success" id="successMessage" role="status">
+        <h2 class="success-title">Спасибо за ваш ответ!</h2>
+        <p>
+          Ваши предпочтения сохранены.
+          Будем рады видеть вас на нашем празднике.
+        </p>
+      </div>
+
+      <p class="footer-note">С любовью, молодожёны</p>
+    </div>
+  </main>
+
+  <script>
+    const form = document.getElementById("banquetForm");
+    const successMessage = document.getElementById("successMessage");
+
+    const guestSection = document.getElementById("guestSection");
+    const mainDishSection = document.getElementById("mainDishSection");
+
+    const guestError = document.getElementById("guestError");
+    const dishError = document.getElementById("dishError");
+
+    const firstName = document.getElementById("firstName");
+    const lastName = document.getElementById("lastName");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const hasGuestData =
+        firstName.value.trim().length > 0 &&
+        lastName.value.trim().length > 0;
+
+      const selectedDish = form.querySelector(
+        'input[name="mainDish"]:checked'
+      );
+
+      guestSection.classList.toggle("has-error", !hasGuestData);
+      mainDishSection.classList.toggle("has-error", !selectedDish);
+
+      guestError.textContent = "Укажите имя и фамилию.";
+      dishError.textContent = "Выберите основное блюдо.";
+
+      if (!hasGuestData || !selectedDish) {
+        const firstInvalidSection = !hasGuestData
+          ? guestSection
+          : mainDishSection;
+
+        firstInvalidSection.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+
+        return;
+      }
+
+      const alcohol = Array.from(
+        form.querySelectorAll('input[name="alcohol"]:checked')
+      ).map((item) => item.value);
+
+      const formData = {
+        firstName: firstName.value.trim(),
+        lastName: lastName.value.trim(),
+        mainDish: selectedDish.value,
+        alcohol,
+        comment: document.getElementById("comment").value.trim(),
+        submittedAt: new Date().toISOString()
+      };
+
+      
+        //Здесь можно заменить демонстрационное сохранение
+        //на отправку на backend:
+       
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData)
+        });
+       
+
+      localStorage.setItem(
+        "wedding-banquet-response",
+        JSON.stringify(formData)
+      );
+
+      form.style.display = "none";
+      successMessage.classList.add("is-visible");
+      successMessage.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+    });
+
+    document.querySelectorAll('input[name="alcohol"]').forEach((checkbox) => {
+      checkbox.addEventListener("change", function () {
+        const noAlcohol = document.getElementById("alcoholNone");
+
+        if (this.id === "alcoholNone" && this.checked) {
+          document
+            .querySelectorAll('input[name="alcohol"]:not(#alcoholNone)')
+            .forEach((item) => {
+              item.checked = false;
+            });
+        }
+
+        if (this.id !== "alcoholNone" && this.checked) {
+          noAlcohol.checked = false;
+        }
+      });
+    });
+
+    firstName.addEventListener("input", () => {
+      if (firstName.value.trim() && lastName.value.trim()) {
+        guestSection.classList.remove("has-error");
+      }
+    });
+
+    lastName.addEventListener("input", () => {
+      if (firstName.value.trim() && lastName.value.trim()) {
+        guestSection.classList.remove("has-error");
+      }
+    });
+
+    document.querySelectorAll('input[name="mainDish"]').forEach((radio) => {
+      radio.addEventListener("change", () => {
+        mainDishSection.classList.remove("has-error");
+      });
+    });
+  </script>
+
+</body></html>
